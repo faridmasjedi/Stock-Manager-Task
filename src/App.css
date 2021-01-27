@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px;
+}
+.card button {
+  width: 85px;
+}
+.plus,
+.minus {
+  width: 25px;
+  text-align: center;
+}
+.plus {
+  background-color: darkgreen;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.minus {
+  background-color: darkred;
+  color: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add,
+.sell {
+  background-color: rgb(38, 73, 179);
+  color: white;
+}
+.deposit,
+.withdraw {
+  width: 100px;
+}
+.deposit {
+  background-color: rgb(38, 73, 179);
+  color: white;
+}
+.withdraw {
+  background-color: rgb(216, 74, 23);
+  color: white;
+}
+hr {
+  border: 1px solid gray;
+  width: 100%;
+}
+table {
+  text-align: center;
+}
+tbody,
+thead {
+  border: 1px solid black;
+  width: 100%;
+}
+th {
+  background-color: gray;
+}
+#search {
+  background: gray;
+}
+#space {
+  padding: 0;
+  background-color: white;
+}
+#tr {
+  width: 250px;
 }
