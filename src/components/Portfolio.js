@@ -180,7 +180,7 @@ const Portfolio = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {mySharesTicker.map( (item,index) => (
+                    {mySharesTicker ? null : mySharesTicker.map( (item,index) => (
                         <MyShares 
                             key={index}
                             share={item} 
