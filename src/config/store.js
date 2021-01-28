@@ -14,14 +14,14 @@ function saveToLocalStorage(state){
 function loadFromLocalStorage() {
     try{
         const serializedState = localStorage.getItem('state');
-        if (serializedState === null) {
-            return {mySharesTicker:[],mySharesQuantity:[],budget:0}
+        if (serializedState === null || serializedState === {"list":[]}) {
+            return {list:[{list:[{mySharesTicker:['goog','aapl'],mySharesQuantity:[2,4],budget:350}]}]}
         }
         return JSON.parse(serializedState);
     }
     catch(err){
         console.log(err);
-        return {mySharesTicker:[],mySharesQuantity:[],budget:0}
+        return {list:[{mySharesTicker:['goog','aapl'],mySharesQuantity:[2,4],budget:350}]}
     }
 }
 
@@ -29,7 +29,11 @@ const rootReducer = combineReducers({
     list: listReducer
 })
 
-const persistedState = loadFromLocalStorage();
+let persistedState = loadFromLocalStorage();
+
+if (persistedState.list.length === 0) { 
+    persistedState = {list:[{mySharesTicker:['goog','aapl'],mySharesQuantity:[2,4],budget:350}]}
+}
 
 const store = createStore(
     rootReducer,
