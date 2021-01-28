@@ -15,7 +15,7 @@ function loadFromLocalStorage() {
     try{
         const serializedState = localStorage.getItem('state');
         if (serializedState === null || serializedState === {"list":[]}) {
-            return {list:[{list:[{mySharesTicker:['goog','aapl'],mySharesQuantity:[2,4],budget:350}]}]}
+            return {list:[{mySharesTicker:['goog','aapl'],mySharesQuantity:[2,4],budget:350}]}
         }
         return JSON.parse(serializedState);
     }
